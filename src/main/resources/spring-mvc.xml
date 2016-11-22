@@ -20,7 +20,7 @@
 		<property name="messageConverters">
 			<list>
 				<!-- <bean id="fastJsonHttpMessageConverter" class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter"> -->
-				<bean id="fastJsonHttpMessageConverter" class="rml.util.FastJsonHttpMessageConverter">
+				<bean id="fastJsonHttpMessageConverter" class="com.zhiche.util.FastJsonHttpMessageConverter">
 					<property name="supportedMediaTypes">
 						<list>
 							<value>text/html;charset=UTF-8</value>

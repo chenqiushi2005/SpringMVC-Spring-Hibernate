@@ -23,7 +23,7 @@
   </filter>
   <filter>
     <filter-name>errorImgFilter</filter-name>
-    <filter-class>rml.filter.ErrorImgFilter</filter-class>
+    <filter-class>com.zhiche.filter.ErrorImgFilter</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>openSessionInViewFilter</filter-name>
@@ -47,10 +47,10 @@
     <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
   </listener>
   <listener>
-    <listener-class>rml.listener.RepairListener</listener-class>
+    <listener-class>com.zhiche.listener.RepairListener</listener-class>
   </listener>
   <listener>
-    <listener-class>rml.listener.OnlineListener</listener-class>
+    <listener-class>com.zhiche.listener.OnlineListener</listener-class>
   </listener>
   <servlet>
     <servlet-name>springMvc</servlet-name>
