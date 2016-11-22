@@ -139,15 +139,15 @@ public class RepairServiceImpl implements RepairServiceI {
 	}
 	
 	synchronized public void repair() {
-		repairMenu(); 
-		repairAuth();  
-		repairRole();  
-		repairUser();
-		repairRoleAuth(); 
-		repairUserRole();
-		repairEquipment();
-		repairDocument();
-		repairLog();
+//		repairMenu(); 
+//		repairAuth();  
+//		repairRole();  
+//		repairUser();
+//		repairRoleAuth(); 
+//		repairUserRole();
+//		repairEquipment();
+//		repairDocument();
+//		repairLog();
 	}
 
 	private void repairMenu() {

@@ -22,8 +22,8 @@ public class TestSpring {
 	
 	@Test
 	public void test1() {
-		User user = new User();
-		DataGrid datagrid = userService.datagrid(user);
-		System.out.println(datagrid.getTotal());
+//		User user = new User();
+//		DataGrid datagrid = userService.datagrid(user);
+//		System.out.println(datagrid.getTotal());
 	}
 }
