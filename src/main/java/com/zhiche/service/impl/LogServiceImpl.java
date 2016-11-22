@@ -35,7 +35,7 @@ import com.zhiche.util.IpUtil;
 @Service("logService")
 public class LogServiceImpl implements LogServiceI {
 	
-	@Pointcut("execution(* rml.service.impl.UserServiceImpl.*(..))")
+	@Pointcut("execution(* com.zhiche.service.impl.UserServiceImpl.*(..))")
 	public void pointcut(){}  
 	
 	private static final Logger logger = Logger.getLogger(LogServiceImpl.class);
