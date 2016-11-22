@@ -13,7 +13,7 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
 	<!-- spring mvc controller -->
-	<context:component-scan base-package="rml.controller" />
+	<context:component-scan base-package="com.zhiches.controller" />
 
 	<!-- Spring MVC JSON -->
 	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
@@ -35,35 +35,40 @@
 		  p:prefix="/" p:suffix=".jsp" />
 
 	<!-- file upload -->
-	<!-- 
 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<property name="defaultEncoding"> 
 	 		<value>UTF-8</value> 
 	 	</property> 
 	 	<property name="maxUploadSize"> 
-	 		<value>32505856</value> 
+	 		<value>104857600</value> 
 	 	</property> 
 	 	<property name="maxInMemorySize"> 
 	 		<value>4096</value> 
 	 	</property>
-	 </bean> 
-	 -->
-
+	</bean> 
+	
 	<!-- interceptor -->
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/**" />
-			<bean class="rml.interceptors.SecurityInterceptor">
+			<bean class="com.zhiche.interceptors.SecurityInterceptor">
 				<!-- exclude urls -->
 				<property name="excludeUrls">
 					<list>
-						<value>/userController/reg</value>
-						<value>/userController/login</value>
-						<value>/userController/loginCombobox</value>
-						<value>/userController/loginCombogrid</value>
-						<value>/userController/logout</value>
-						<value>/roleController/tree</value>
-						<value>/roleController/allTree</value>
+						<value>/authController/doNotNeedSession_tree</value>
+						<value>/authController/doNotNeedSession_treeRecursive</value>
+						<value>/menuController/doNotNeedSession_tree</value>
+						<value>/menuController/doNotNeedSession_treeRecursive</value>
+						<value>/onlineController/doNotNeedSession_onlineDatagrid</value>
+						<value>/repairController/doNotNeedSession_onlineDatagrid</value>
+						<value>/repairController/doNotNeedSession_deleteAndRepair</value>
+						<value>/roleController/doNotNeedSession_combobox</value>
+					
+						<value>/userController/doNotNeedSession_login</value>
+						<value>/userController/doNotNeedSession_reg</value>
+						<value>/userController/doNotNeedSession_logout</value>
+						<value>/userController/doNotNeedSession_combobox</value>
+						<value>/userController/doNotNeedSession_datagrid</value>
 					</list>
 				</property>
 			</bean>

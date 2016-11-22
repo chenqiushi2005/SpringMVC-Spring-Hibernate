@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>zhibing_springmvc</groupId>
   <artifactId>zhibing_springmvc</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1</version>
   <packaging>war</packaging>
   <name>zhibing_springmvc</name>
   
@@ -109,12 +109,18 @@
 		</dependency>
 
 		<!-- oracle (can not download from Maven repository)  -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>com.oracle</groupId>
 			<artifactId>ojdbc14</artifactId>
 			<version>10.2.0.1.0</version>
-		</dependency>
-		
+		</dependency> -->
+		<!-- mysql -->
+		<dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.26</version>
+        </dependency>
+        
 		<!--  druid -->
 		<dependency>
 			<groupId>com.alibaba</groupId>

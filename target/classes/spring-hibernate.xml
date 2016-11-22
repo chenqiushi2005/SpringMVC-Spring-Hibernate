@@ -46,7 +46,7 @@
 		<property name="dataSource" ref="dataSource" />
 		<property name="hibernateProperties">
 			<props>
-				<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+				<!-- <prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop> -->
 				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
 				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
 				<prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
@@ -57,7 +57,7 @@
 		<!-- autoscan annotation for hiberante config -->
 		<property name="packagesToScan">
 			<list>
-				<value>rml.model.po</value>
+				<value>com.zhiche.model.po</value>
 			</list>
 		</property>
 	</bean>
@@ -94,7 +94,7 @@
 		</tx:attributes>
 	</tx:advice>
 	<aop:config>
-		<aop:pointcut id="transactionPointcut" expression="execution(* rml.service..*Impl.*(..))" />
+		<aop:pointcut id="transactionPointcut" expression="execution(* com.zhiche.service..*Impl.*(..))" />
 		<aop:advisor pointcut-ref="transactionPointcut" advice-ref="transactionAdvice" />
 	</aop:config>
 
