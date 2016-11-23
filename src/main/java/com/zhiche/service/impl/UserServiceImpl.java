@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
+import org.hibernate.type.descriptor.java.JdbcTimestampTypeDescriptor.TimestampMutabilityPlan;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,6 +24,8 @@ import com.zhiche.model.vo.RoleChart;
 import com.zhiche.model.vo.User;
 import com.zhiche.service.UserServiceI;
 import com.zhiche.util.Encrypt;
+
+import jxl.write.DateTime;
 
 @Service("userService")
 public class UserServiceImpl implements UserServiceI {
@@ -69,7 +72,6 @@ public class UserServiceImpl implements UserServiceI {
 	}
 	
 	public User login(User user) {
-		System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++123");
 		Tuser t = userDao.get("from Tuser t where t.cname = ? and t.cpwd = ?", new Object[] { user.getCname(), Encrypt.e(user.getCpwd()) });
 		if (t != null) {
 			BeanUtils.copyProperties(t, user, new String[] { "cpwd" });
