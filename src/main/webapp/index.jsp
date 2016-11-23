@@ -27,22 +27,12 @@
 
 </head>
 <body class="easyui-layout">
-	<div data-options="region:'north'" style="height:40px;">
-		<jsp:include page="layout/north.jsp"></jsp:include>
-	</div>
-	<div data-options="region:'south'" style="height:20px;"></div>
-	<div data-options="region:'west'" style="width:200px;">
-		<jsp:include page="layout/west.jsp"></jsp:include>
-	</div>
-	<div data-options="region:'east',title:'Other',split:true" style="width:220px;">
-		<jsp:include page="layout/east.jsp"></jsp:include>
-	</div>
-	<div data-options="region:'center',title:'SpringMVC3.2.8+Spring3.2.8+Hibernate4.2.11+JQuery-EasyUI1.3.1+Oracle10g+Maven'" style="overflow: hidden;">
-		<jsp:include page="layout/center.jsp"></jsp:include>
-	</div>
-
-	<jsp:include page="user/login.jsp"></jsp:include>
-	<jsp:include page="user/reg.jsp"></jsp:include>
+<div data-options="region:'north'" style="height:240px;">
+    <a>www.baidu.com</a>
+</div>
+<div  data-options="region:'center',title:'内容'" style="overflow: hidden;">
+    <a>www.baidu.com</a>
+</div>
 	
 </body>
 </html>
