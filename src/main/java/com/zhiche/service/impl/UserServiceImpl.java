@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.zhiche.dao.BaseDaoI;
+import com.zhiche.model.po.Brand;
 import com.zhiche.model.po.Tauth;
 import com.zhiche.model.po.Trole;
 import com.zhiche.model.po.Troletauth;
@@ -28,6 +29,7 @@ import com.zhiche.util.Encrypt;
 public class UserServiceImpl implements UserServiceI {
 
 	private BaseDaoI<Tuser> userDao;
+	private BaseDaoI<Brand> brandDao;
 	private BaseDaoI<Trole> roleDao;
 	private BaseDaoI<Tusertrole> userroleDao;
 	private BaseDaoI<RoleChart> roleChartDao;
@@ -70,6 +72,10 @@ public class UserServiceImpl implements UserServiceI {
 	
 	public User login(User user) {
 		System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++123");
+		
+		Brand brand = new Brand();
+		brand.setErpId(10);
+		this.brandDao.save(brand);
 		Tuser t = userDao.get("from Tuser t where t.cname = ? and t.cpwd = ?", new Object[] { user.getCname(), Encrypt.e(user.getCpwd()) });
 		if (t != null) {
 			BeanUtils.copyProperties(t, user, new String[] { "cpwd" });
@@ -313,6 +319,14 @@ public class UserServiceImpl implements UserServiceI {
 			datalist.add(rc);
 		}
 		return datalist;
+	}
+
+	public BaseDaoI<Brand> getBrandDao() {
+		return brandDao;
+	}
+
+	public void setBrandDao(BaseDaoI<Brand> brandDao) {
+		this.brandDao = brandDao;
 	}
 
 }

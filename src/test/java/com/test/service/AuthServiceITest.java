@@ -15,7 +15,6 @@ public class AuthServiceITest extends BaseSpringUnit{
 	@Autowired
 	private AuthServiceI authServiceI;
 	
-	@Autowired
 	private BaseDaoI<Tauth> authDao; 
 	
 	@Test
