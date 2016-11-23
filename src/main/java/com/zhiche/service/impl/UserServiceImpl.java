@@ -69,6 +69,7 @@ public class UserServiceImpl implements UserServiceI {
 	}
 	
 	public User login(User user) {
+		System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++123");
 		Tuser t = userDao.get("from Tuser t where t.cname = ? and t.cpwd = ?", new Object[] { user.getCname(), Encrypt.e(user.getCpwd()) });
 		if (t != null) {
 			BeanUtils.copyProperties(t, user, new String[] { "cpwd" });
